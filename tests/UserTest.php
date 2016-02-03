@@ -7,7 +7,6 @@ namespace Dark\PW\Schedule;
  * @covers \Dark\PW\Schedule\User
  * @uses \Dark\PW\Schedule\UserNickname
  * @uses \Dark\PW\Schedule\UserEmail
- * @uses \Dark\PW\Schedule\Message
  */
 class UserTest extends \PHPUnit_Framework_TestCase
 {
