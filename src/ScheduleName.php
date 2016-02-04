@@ -5,7 +5,7 @@ namespace Dark\PW\Schedule;
 
 use InvalidArgumentException;
 
-class ScheduleName
+final class ScheduleName
 {
     /**
      * @var string
