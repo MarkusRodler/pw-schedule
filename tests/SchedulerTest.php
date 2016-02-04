@@ -26,8 +26,8 @@ class SchedulerTest extends \PHPUnit_Framework_TestCase
         $room = new Room('My Room');
         $scheduler->addRoom($room);
         $scheduleName = new ScheduleName('schedule name');
-        $startDate = new \DateTime('2016-01-01');
-        $endDate = new \DateTime('2016-01-02');
+        $startDate = new \DateTimeImmutable('2016-01-01');
+        $endDate = new \DateTimeImmutable('2016-01-02');
         $scheduleDate = new ScheduleDate($startDate, $endDate);
         $schedule = new Schedule($scheduleName, $scheduleDate, $room);
         
@@ -48,8 +48,8 @@ class SchedulerTest extends \PHPUnit_Framework_TestCase
         $evilRoom = new Room('My Room');
         $scheduler->addRoom($room);
         $scheduleName = new ScheduleName('schedule name');
-        $startDate = new \DateTime('2016-01-01');
-        $endDate = new \DateTime('2016-01-02');
+        $startDate = new \DateTimeImmutable('2016-01-01');
+        $endDate = new \DateTimeImmutable('2016-01-02');
         $scheduleDate = new ScheduleDate($startDate, $endDate);
         $schedule = new Schedule($scheduleName, $scheduleDate, $evilRoom);
         

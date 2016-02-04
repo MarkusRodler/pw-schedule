@@ -13,8 +13,8 @@ class ScheduleTest extends \PHPUnit_Framework_TestCase
     public function testScheduleWithValidNameCanBeCreated()
     {
         $scheduleName = new ScheduleName('schedule name');
-        $startDate = new \DateTime('2016-01-01');
-        $endDate = new \DateTime('2016-01-02');
+        $startDate = new \DateTimeImmutable('2016-01-01');
+        $endDate = new \DateTimeImmutable('2016-01-02');
         $scheduleDate = new ScheduleDate($startDate, $endDate);
         $room = new Room('My Room');
         
@@ -28,8 +28,8 @@ class ScheduleTest extends \PHPUnit_Framework_TestCase
     public function testUsersCanAttendSchedule()
     {
         $scheduleName = new ScheduleName('schedule name');
-        $startDate = new \DateTime('2016-01-01');
-        $endDate = new \DateTime('2016-01-02');
+        $startDate = new \DateTimeImmutable('2016-01-01');
+        $endDate = new \DateTimeImmutable('2016-01-02');
         $scheduleDate = new ScheduleDate($startDate, $endDate);
         $room = new Room('My Room');
         $schedule = new Schedule($scheduleName, $scheduleDate, $room);

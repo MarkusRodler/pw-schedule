@@ -3,19 +3,22 @@ declare(strict_types = 1);
 
 namespace Dark\PW\Schedule;
 
-class ScheduleDate
+use DateTimeImmutable;
+use RangeException;
+
+final class ScheduleDate
 {
     /**
-     * @var \DateTime
+     * @var DateTimeImmutable
      */
     private $startDate;
  
     /**
-     * @var \DateTime
+     * @var DateTimeImmutable
      */
     private $endDate;
  
-    public function __construct(\DateTime $startDate, \DateTime $endDate)
+    public function __construct(DateTimeImmutable $startDate, DateTimeImmutable $endDate)
     {
         $this->ensureStartDateIsBeforeEndDate($startDate, $endDate);
 
@@ -24,25 +27,31 @@ class ScheduleDate
     }
 
     /**
-     * @return DateTime
+     * @return DateTimeImmutable
      */
-    public function getStartDate(): \DateTime
+    public function getStartDate(): DateTimeImmutable
     {
         return $this->startDate;
     }
 
     /**
-     * @return DateTime
+     * @return DateTimeImmutable
      */
-    public function getEndDate(): \DateTime
+    public function getEndDate(): DateTimeImmutable
     {
         return $this->endDate;
     }
+    
+    public function equals(ScheduleDate $scheduleDate): bool
+    {
+        return ($scheduleDate->getStartDate()== $this->startDate 
+            && $scheduleDate->getEndDate() == $this->endDate);
+    }
 
-    private function ensureStartDateIsBeforeEndDate(\DateTime $startDate, \DateTime $endDate)
+    private function ensureStartDateIsBeforeEndDate(DateTimeImmutable $startDate, DateTimeImmutable $endDate)
     {
         if ($endDate < $startDate) {
-            throw new \RangeException('Startdate can not be after Enddate');
+            throw new RangeException('Startdate can not be after Enddate');
         }
     }
 }
