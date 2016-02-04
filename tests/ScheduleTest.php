@@ -3,18 +3,21 @@ declare(strict_types = 1);
 
 namespace Dark\PW\Schedule;
 
+use DateTimeImmutable;
+use PHPUnit_Framework_TestCase;
+
 /**
  * @covers \Dark\PW\Schedule\Schedule
  * @uses \Dark\PW\Schedule\ScheduleName
  */
-class ScheduleTest extends \PHPUnit_Framework_TestCase
+class ScheduleTest extends PHPUnit_Framework_TestCase
 {
 
     public function testScheduleWithValidNameCanBeCreated()
     {
         $scheduleName = new ScheduleName('schedule name');
-        $startDate = new \DateTimeImmutable('2016-01-01');
-        $endDate = new \DateTimeImmutable('2016-01-02');
+        $startDate = new DateTimeImmutable('2016-01-01');
+        $endDate = new DateTimeImmutable('2016-01-02');
         $scheduleDate = new ScheduleDate($startDate, $endDate);
         $room = new Room('My Room');
         
@@ -28,8 +31,8 @@ class ScheduleTest extends \PHPUnit_Framework_TestCase
     public function testUsersCanAttendSchedule()
     {
         $scheduleName = new ScheduleName('schedule name');
-        $startDate = new \DateTimeImmutable('2016-01-01');
-        $endDate = new \DateTimeImmutable('2016-01-02');
+        $startDate = new DateTimeImmutable('2016-01-01');
+        $endDate = new DateTimeImmutable('2016-01-02');
         $scheduleDate = new ScheduleDate($startDate, $endDate);
         $room = new Room('My Room');
         $schedule = new Schedule($scheduleName, $scheduleDate, $room);

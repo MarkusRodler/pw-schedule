@@ -3,6 +3,8 @@ declare(strict_types = 1);
 
 namespace Dark\PW\Schedule;
 
+use InvalidArgumentException;
+
 class UserEmail
 {
     /**
@@ -29,12 +31,12 @@ class UserEmail
 
     /**
      * @param string $email
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     private function ensureEmailIsNotEmpty(string $email)
     {
         if (strlen($email) === 0) {
-            throw new \InvalidArgumentException('Empty email is not allowed');
+            throw new InvalidArgumentException('Empty email is not allowed');
         }
     }
 }

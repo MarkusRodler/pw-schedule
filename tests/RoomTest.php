@@ -3,10 +3,13 @@ declare(strict_types = 1);
 
 namespace Dark\PW\Schedule;
 
+use PHPUnit_Framework_TestCase;
+use InvalidArgumentException;
+
 /**
  * @covers \Dark\PW\Schedule\Room
  */
-class RoomTest extends \PHPUnit_Framework_TestCase
+class RoomTest extends PHPUnit_Framework_TestCase
 {
 
     /**

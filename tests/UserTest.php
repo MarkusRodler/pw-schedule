@@ -3,12 +3,14 @@ declare(strict_types = 1);
 
 namespace Dark\PW\Schedule;
 
+use PHPUnit_Framework_TestCase;
+
 /**
  * @covers \Dark\PW\Schedule\User
  * @uses \Dark\PW\Schedule\UserNickname
  * @uses \Dark\PW\Schedule\UserEmail
  */
-class UserTest extends \PHPUnit_Framework_TestCase
+class UserTest extends PHPUnit_Framework_TestCase
 {
 
     public function testUserWithValidNicknameAndValidEmailCanBeCreated()

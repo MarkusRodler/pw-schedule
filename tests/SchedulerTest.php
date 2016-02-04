@@ -3,10 +3,14 @@ declare(strict_types = 1);
 
 namespace Dark\PW\Schedule;
 
+use DateTimeImmutable;
+use InvalidArgumentException;
+use PHPUnit_Framework_TestCase;
+
 /**
  * @covers \Dark\PW\Schedule\Scheduler
  */
-class SchedulerTest extends \PHPUnit_Framework_TestCase
+class SchedulerTest extends PHPUnit_Framework_TestCase
 {
 
     public function testRoomCanBeAdded()
@@ -26,8 +30,8 @@ class SchedulerTest extends \PHPUnit_Framework_TestCase
         $room = new Room('My Room');
         $scheduler->addRoom($room);
         $scheduleName = new ScheduleName('schedule name');
-        $startDate = new \DateTimeImmutable('2016-01-01');
-        $endDate = new \DateTimeImmutable('2016-01-02');
+        $startDate = new DateTimeImmutable('2016-01-01');
+        $endDate = new DateTimeImmutable('2016-01-02');
         $scheduleDate = new ScheduleDate($startDate, $endDate);
         $schedule = new Schedule($scheduleName, $scheduleDate, $room);
         
@@ -48,8 +52,8 @@ class SchedulerTest extends \PHPUnit_Framework_TestCase
         $evilRoom = new Room('My Room');
         $scheduler->addRoom($room);
         $scheduleName = new ScheduleName('schedule name');
-        $startDate = new \DateTimeImmutable('2016-01-01');
-        $endDate = new \DateTimeImmutable('2016-01-02');
+        $startDate = new DateTimeImmutable('2016-01-01');
+        $endDate = new DateTimeImmutable('2016-01-02');
         $scheduleDate = new ScheduleDate($startDate, $endDate);
         $schedule = new Schedule($scheduleName, $scheduleDate, $evilRoom);
         

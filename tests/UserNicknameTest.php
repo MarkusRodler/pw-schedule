@@ -3,10 +3,13 @@ declare(strict_types = 1);
 
 namespace Dark\PW\Schedule;
 
+use InvalidArgumentException;
+use PHPUnit_Framework_TestCase;
+
 /**
  * @covers \Dark\PW\Schedule\UserNickname
  */
-class UserNicknameTest extends \PHPUnit_Framework_TestCase
+class UserNicknameTest extends PHPUnit_Framework_TestCase
 {
 
     /**

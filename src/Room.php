@@ -3,6 +3,8 @@ declare(strict_types = 1);
 
 namespace Dark\PW\Schedule;
 
+use InvalidArgumentException;
+
 class Room
 {
     /**
@@ -29,12 +31,12 @@ class Room
 
     /**
      * @param string $name
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     private function ensureNameIsNotEmpty(string $name)
     {
         if (strlen($name) === 0) {
-            throw new \InvalidArgumentException('Empty name is not allowed');
+            throw new InvalidArgumentException('Empty name is not allowed');
         }
     }
 }

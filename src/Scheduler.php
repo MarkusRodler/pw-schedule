@@ -3,22 +3,25 @@ declare(strict_types = 1);
 
 namespace Dark\PW\Schedule;
 
+use InvalidArgumentException;
+use SplObjectStorage;
+
 class Scheduler
 {
     /**
-     * @var \SplObjectStorage
+     * @var SplObjectStorage
      */
     private $rooms;
 
     /**
-     * @var \SplObjectStorage
+     * @var SplObjectStorage
      */
     private $schedules;
 
     public function __construct()
     {
-        $this->rooms = new \SplObjectStorage();
-        $this->schedules = new \SplObjectStorage();
+        $this->rooms = new SplObjectStorage();
+        $this->schedules = new SplObjectStorage();
     }
 
 
@@ -31,9 +34,9 @@ class Scheduler
     }
     
     /**
-     * @return \SplObjectStorage
+     * @return SplObjectStorage
      */
-    public function getRooms(): \SplObjectStorage
+    public function getRooms(): SplObjectStorage
     {
         return $this->rooms;
     }
@@ -49,21 +52,21 @@ class Scheduler
     }
     
     /**
-     * @return \SplObjectStorage
+     * @return SplObjectStorage
      */
-    public function getSchedules(): \SplObjectStorage
+    public function getSchedules(): SplObjectStorage
     {
         return $this->schedules;
     }
     
     /**
      * @param Room $room
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     private function ensureRoomIsKnown(Room $room)
     {
         if (!$this->rooms->contains($room)) {
-            throw new \InvalidArgumentException('Room Unknown');
+            throw new InvalidArgumentException('Room Unknown');
         }
     }
 

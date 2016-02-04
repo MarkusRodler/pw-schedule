@@ -3,6 +3,8 @@ declare(strict_types = 1);
 
 namespace Dark\PW\Schedule;
 
+use SplObjectStorage;
+
 class Schedule
 {
     /**
@@ -21,7 +23,7 @@ class Schedule
     private $room;
 
     /**
-     * @var \SplObjectStorage
+     * @var SplObjectStorage
      */
     private $attendees;
 
@@ -31,7 +33,7 @@ class Schedule
         $this->scheduleName = $name;
         $this->scheduleDate = $date;
         $this->room = $room;
-        $this->attendees = new \SplObjectStorage();
+        $this->attendees = new SplObjectStorage();
     }
 
     /**
@@ -67,9 +69,9 @@ class Schedule
     }
     
     /**
-     * @return \SplObjectStorage
+     * @return SplObjectStorage
      */
-    public function getAttendees(): \SplObjectStorage
+    public function getAttendees(): SplObjectStorage
     {
         return $this->attendees;
     }
