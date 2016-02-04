@@ -2,7 +2,7 @@
 <phpunit
 		backupGlobals="false"
 		beStrictAboutChangesToGlobalState="true"
-		 beStrictAboutCoversAnnotation="true"
+		beStrictAboutCoversAnnotation="true"
 		beStrictAboutOutputDuringTests="true"
 		beStrictAboutTestsThatDoNotTestAnything="true"
 		beStrictAboutTodoAnnotatedTests="true"
