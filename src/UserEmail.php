@@ -17,6 +17,8 @@ class UserEmail
         $trimmedEmail = trim($email);
 
         $this->ensureEmailIsNotEmpty($trimmedEmail);
+        
+        $this->ensureEmailIsValid($trimmedEmail);
 
         $this->email = $trimmedEmail;
     }
@@ -37,6 +39,17 @@ class UserEmail
     {
         if (strlen($email) === 0) {
             throw new InvalidArgumentException('Empty email is not allowed');
+        }
+    }
+
+    /**
+     * @param string $email
+     * @throws InvalidArgumentException
+     */
+    private function ensureEmailIsValid(string $email)
+    {
+        if (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
+            throw new InvalidArgumentException('Invalid email');
         }
     }
 }

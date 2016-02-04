@@ -43,4 +43,14 @@ class UserEmailTest extends PHPUnit_Framework_TestCase
 
         $this->assertSame('mail@mail.de', $userEmail->getEmail());
     }
+    
+    
+    /**
+     * @expectedException InvalidArgumentException
+     * @expectedExceptionMessage Invalid email
+     */
+    public function testDoesNotAcceptInvalidEmail()
+    {
+        new UserEmail('wrongemail');
+    }
 }
