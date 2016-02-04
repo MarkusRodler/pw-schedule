@@ -16,7 +16,7 @@ class UserEmailTest extends PHPUnit_Framework_TestCase
      * @expectedException InvalidArgumentException
      * @expectedExceptionMessage Empty email is not allowed
      */
-    public function testEmailCanNotBeEmpty()
+    public function testEmailCannotBeEmpty()
     {
         new UserEmail('');
     }
@@ -25,7 +25,7 @@ class UserEmailTest extends PHPUnit_Framework_TestCase
      * @expectedException InvalidArgumentException
      * @expectedExceptionMessage Empty email is not allowed
      */
-    public function testEmailCanNotContainOnlySpaces()
+    public function testEmailCannotContainOnlySpaces()
     {
         new UserEmail('   ');
     }

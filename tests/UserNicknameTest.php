@@ -16,7 +16,7 @@ class UserNicknameTest extends PHPUnit_Framework_TestCase
      * @expectedException InvalidArgumentException
      * @expectedExceptionMessage Empty name is not allowed
      */
-    public function testNameCanNotBeEmpty()
+    public function testNameCannotBeEmpty()
     {
         new UserNickname('');
     }
@@ -25,7 +25,7 @@ class UserNicknameTest extends PHPUnit_Framework_TestCase
      * @expectedException InvalidArgumentException
      * @expectedExceptionMessage Empty name is not allowed
      */
-    public function testNameCanNotContainOnlySpaces()
+    public function testNameCannotContainOnlySpaces()
     {
         new UserNickname('   ');
     }

@@ -17,7 +17,7 @@ class ScheduleDateTest extends PHPUnit_Framework_TestCase
      * @expectedException RangeException
      * @expectedExceptionMessage Startdate can not be after Enddate
      */
-    public function testStartDateCanNotBeAfterEndDate()
+    public function testStartDateCannotBeAfterEndDate()
     {
         $startDate = new DateTimeImmutable('2016-01-02');
         $endDate = new DateTimeImmutable('2016-01-01');
@@ -81,7 +81,7 @@ class ScheduleDateTest extends PHPUnit_Framework_TestCase
         $this->assertFalse($scheduleDate->equals($scheduleDate2));
     }
     
-    public function testStartDateAndEndDateCanNotBeModified()
+    public function testStartDateAndEndDateCannotBeModified()
     {
         $startDate = new DateTimeImmutable('2016-01-01');
         $endDate = new DateTimeImmutable('2016-01-02');

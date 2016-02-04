@@ -16,7 +16,7 @@ class RoomTest extends PHPUnit_Framework_TestCase
      * @expectedException InvalidArgumentException
      * @expectedExceptionMessage Empty name is not allowed
      */
-    public function testNameCanNotBeEmpty()
+    public function testNameCannotBeEmpty()
     {
         new Room('');
     }
@@ -25,7 +25,7 @@ class RoomTest extends PHPUnit_Framework_TestCase
      * @expectedException InvalidArgumentException
      * @expectedExceptionMessage Empty name is not allowed
      */
-    public function testNameCanNotContainOnlySpaces()
+    public function testNameCannotContainOnlySpaces()
     {
         new Room('   ');
     }
