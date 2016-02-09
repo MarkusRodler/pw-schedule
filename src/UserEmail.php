@@ -26,7 +26,7 @@ final class UserEmail
     /**
      * @return string
      */
-    public function getEmail(): string
+    public function __toString(): string
     {
         return $this->email;
     }

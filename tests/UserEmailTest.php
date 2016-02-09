@@ -34,14 +34,14 @@ class UserEmailTest extends PHPUnit_Framework_TestCase
     {
         $userEmail = new UserEmail('mail@mail.de');
 
-        $this->assertSame('mail@mail.de', $userEmail->getEmail());
+        $this->assertSame('mail@mail.de', (string) $userEmail);
     }
 
     public function testWhitespacesWillBeTrimmed()
     {
         $userEmail = new UserEmail('  mail@mail.de  ');
 
-        $this->assertSame('mail@mail.de', $userEmail->getEmail());
+        $this->assertSame('mail@mail.de', (string) $userEmail);
     }
     
     
