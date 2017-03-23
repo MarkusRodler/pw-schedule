@@ -1,4 +1,4 @@
-<?php
+  <?php
 declare(strict_types = 1);
 
 namespace Dark\PW\Schedule;
@@ -44,7 +44,7 @@ final class ScheduleDate
     
     public function equals(ScheduleDate $scheduleDate): bool
     {
-        return ($scheduleDate->getStartDate()== $this->startDate 
+        return ($scheduleDate->getStartDate() == $this->startDate 
             && $scheduleDate->getEndDate() == $this->endDate);
     }
 
